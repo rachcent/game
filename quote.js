@@ -1,11 +1,16 @@
-function Quote( x, y) {
+function Quote(x, y) {
   this.x = x;
   this.y = y;
   this.r = 30;
 
+
+  this.grow = function() {
+    this.r = this.r + 15;
+  }
+
   this.show = function() {
-    textSize(32);
+    textSize(this.r);
     fill(255, 0, 200);
-    ellipse(this.x, this.y, this.r*2, this.r*2);
+    text("amazing",this.x, this.y);
   }
 }

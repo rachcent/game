@@ -7,7 +7,7 @@ function setup() {
   ship = new Ship();
   // drop = new Drop(width/2, height/2);
   for ( var i = 0; i < 6; i++) {
-    quotes[i] = new Quote(i * 80 + 80, 60);
+    quotes[i] = new Quote(i * 150 + 10, 60);
   }
 }
 
@@ -19,17 +19,25 @@ function draw() {
     drops[i].move();
   for ( var j = 0; j < quotes.length; j++) {
     if (drops[i].hits(quotes[j])) {
+      quotes[j].grow();
+      drops[i]disapear();
+
       console.log("BOOM");
     }
-}
+  }
 }
   for ( var i = 0; i < quotes.length; i++) {
     quotes[i].show();
   }
+    for ( var i = 0; i < drops.length; i++) {
+      if (drops[i].toDelete) {
+        drops.splice(i, 1);
+      }
+    }
 }
 
 function keyPressed(){
-  if (key === ' ') {
+  ifs (key === ' ') {
     var drop = new Drop(ship.x, height);
     drops.push(drop);
   }
