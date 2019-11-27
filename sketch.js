@@ -1,13 +1,17 @@
+let w = 600;
+let h = 600;
 var ship;
 var quotes = [];
 var drops =[];
+let phrases = ["cooool", "nice","great"];
 
 function setup() {
-  createCanvas(600, 400);
+  createCanvas(w, h);
+  textAlign(CENTER);
   ship = new Ship();
   // drop = new Drop(width/2, height/2);
   for ( var i = 0; i < 6; i++) {
-    quotes[i] = new Quote(i * 150 + 10, 60);
+    quotes[i] = new Quote(random(phrases));
   }
 }
 
@@ -20,24 +24,28 @@ function draw() {
   for ( var j = 0; j < quotes.length; j++) {
     if (drops[i].hits(quotes[j])) {
       quotes[j].grow();
-      drops[i]disapear();
+      drops[i].disappear();
 
       console.log("BOOM");
     }
   }
 }
+
+
   for ( var i = 0; i < quotes.length; i++) {
-    quotes[i].show();
+    quotes[i].display();
+    quotes[i].move();
+    }
   }
-    for ( var i = 0; i < drops.length; i++) {
+    for ( var i = drops.length-1; i >= 0; i--) {
       if (drops[i].toDelete) {
         drops.splice(i, 1);
       }
     }
-}
+
 
 function keyPressed(){
-  ifs (key === ' ') {
+  if (key === ' ') {
     var drop = new Drop(ship.x, height);
     drops.push(drop);
   }
