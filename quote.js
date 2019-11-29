@@ -19,9 +19,9 @@ class Quote  {
   display() {
 
     textSize(this.r);
-    fill(255, 0, 200, 255-this.r/5);
+    fill(255, 0, 200, 255-this.r/1);
     rect(this.x, this.y, 15 * this.numLetters, 30);
-    fill(0, 0, 200, 255-this.r/5);
+    fill(0, 0, 200, 255-this.r/1);
     text(this.text,this.x, this.y);
 
   }
