@@ -5,7 +5,7 @@ function Drop(x, y) {
   this.toDelete = false;
   //size of drop and
   this.show = function() {
-    fill(100, 149, 237);
+    fill(51, 153, 255);
     ellipse(this.x, this.y, this.r * 2, this.r * 2);
   }
 
@@ -14,7 +14,7 @@ function Drop(x, y) {
   }
 
   this.hits = function(quote) {
-    if (this.y <= quote.y + 15) {
+    if (this.y <= quote.y + 1) {
       var d = dist(this.x, this.y, quote.x, quote.y);
       if (d < this.r + 15 * quote.numLetters/2) {
         return true;
@@ -26,6 +26,6 @@ function Drop(x, y) {
 
   //changes the speed of the drop
   this.move = function() {
-    this.y = this.y - 2;
+    this.y = this.y - 5;
   }
 }
