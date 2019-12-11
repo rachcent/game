@@ -1,7 +1,24 @@
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Raleway', sans-serif;
+  /* This centers our sketch horizontally. */
+  justify-content: center;
+
+  /* This centers our sketch vertically. */
+  align-items: center;
+
 }
 canvas {
   display: block;
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+
 }

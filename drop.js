@@ -6,6 +6,7 @@ function Drop(x, y) {
   //size of drop and
   this.show = function() {
     fill(51, 153, 255);
+    // image(dropImg,this.x, this.y, this.r * 2, this.r * 2);
     ellipse(this.x, this.y, this.r * 2, this.r * 2);
   }
 

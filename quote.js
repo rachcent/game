@@ -25,10 +25,10 @@ class Quote  {
 
     textSize(this.r);
     noStroke();
-    fill(204, 255, 204, 200  - this.r / 35);
+    fill(218, 112, 214, 50  - this.r / 35);
     //length of box is 15
-    rect(this.x, this.y, 15 * this.numLetters, 30 );
-    fill(0, 0, 200, 150 - this.r / 20);
+    rect(this.x, this.y, 15 * this.numLetters, 30,10 );
+    fill(250 - this.r / 20);
     text(this.text, this.x, this. y+10);
 
   }
